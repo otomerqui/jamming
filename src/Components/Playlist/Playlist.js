@@ -8,6 +8,8 @@ function Playlist(props) {
             <input defaultValue={'New Playlist'}></input>
             <TrackList 
                 userSearchResults={props.playlistTracks}
+                onRemove={props.onRemove}
+                isRemoval={true}
             />
             <button className="Playlist-save">
                 SAVE TO SPOTIFY

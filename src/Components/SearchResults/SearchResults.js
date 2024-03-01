@@ -8,7 +8,8 @@ function SearchResults(props) {
             <h2>Results</h2>
             <TrackList
                 userSearchResults={props.userSearchResults}
-                
+                isRemoval={false}
+                onAdd={props.onAdd}
             />
 
         </div>
