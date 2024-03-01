@@ -3,6 +3,7 @@ import './App.css';
 import Playlist from "../Playlist/Playlist";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
+import Spotify from "../../util/Spotify";
 
 function App() {
   const [searchResults, setSearchResults] = useState([
@@ -53,6 +54,15 @@ function App() {
   function updatePlaylistName(name) {
     setPlaylistName(name);
   }
+
+  function savePlaylist() {
+    const trackURIs = playlistTracks.map((t) => t.uri);
+  }
+
+  function search(term) {
+    Spotify.search(term).then((result) => setSearchResults(result));
+    console.log(term);
+  }
   
   return (
     <div>
@@ -60,7 +70,7 @@ function App() {
         Ja<span className="highlight">mm</span>ing
       </h1>
       <div className="App">
-        <SearchBar />      
+        <SearchBar onSearch={search} />      
         <div className="App-playlist">
           <SearchResults userSearchResults={searchResults} onAdd={addTrack} />
           <Playlist  
@@ -68,6 +78,7 @@ function App() {
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
             onNameChange={updatePlaylistName}
+            onSave={savePlaylist}
           />
           
           
