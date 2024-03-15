@@ -23,3 +23,10 @@ Jammming is a React-based web application designed to facilitate music discovery
   <li>Deploying the project using Surge</li>
 </ul>
 
+## Deployment
+
+Visit project here: <a href="https://jammiing-pro.netlify.app/">Jamming App</a>
+
+
+
+
